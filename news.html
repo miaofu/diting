@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://mark.ad.sogou.com/mark/login -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]-->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>谛听科技</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="./标注系统_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./标注系统_files/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="./标注系统_files/main.css">
+        <link rel="shortcut icon" href="diting.jpg">
+
+    <script src="lib/jquery-3.1.0.min.js"></script>
+<!-- for table-->
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <style rel="stylesheet">
+         .title
+         {
+          font-size:20px;
+          margin-top: 30px;
+          margin-bottom: 20px;
+          font-family: Georgia;
+
+
+         }
+         .subtitle, .notation
+         {font-family: Georgia;}
+         .notation{margin-bottom: 10px;}
+         </style>
+
+</head>
+    <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" tabindex="-1" href="index.html">Diting Tech</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a tabindex="-1" href="shared.html">Cross Attention</a></li>
+                            <li><a tabindex="-1" href="user.html">Following Smart Money</a></li>
+                            <li><a tabindex="-1" href="sentiment.html">Investor Sentiment</a></li>
+                            <li><a tabindex="-1" href="news.html">Trading On News</a></li>
+                            <li><a tabindex="-1" href="download_contact.html">download & contact us</a></li>
+
+
+                        </ul>
+                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div style="width: 1100px;height:10px;"></div>
+
+<div id="part4">
+
+        
+        <div id="P4_news" style="width: 1200px;height:500px;">
+            <div class="title">Trading on News</div>
+            <div class="notation">The key issue is to establishing relation between stock news and future stock price. namely, we are try to quantify how news impacts stock price. The advantage of our stragety is that users do not need to label press, as the system can automatically discriminate it. And this stragety is something like an event-driven strategy and sentiment analysis mixture. In addition Beside using the vector space model to make representation of the document and news, we can also use a named entity (such as organization name), phrases (such as event name like Merge&Acquisitions), etc. If we use event name like Merge&Acquisitions which may appear in news, then our strategy can be understood as that we attempt to find how event ike Merge&Acquisitions affect stock price.</div>
+            <table id="P4_news_table" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Industry</th>
+                <th>stockcode</th>
+                <th>stock</th>
+                <th>News(up)</th>
+                <th>News(down)</th>
+                <th>train(up)</th>
+                <th>train(down)</th>
+                <th>test(up)</th>
+                <th>test(down)</th>
+                <th>Test Accurancy</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Industry</th>
+                <th>stockcode</th>
+                <th>stock</th>
+                <th>News(up)</th>
+                <th>News(down)</th>
+                <th>train(up)</th>
+                <th>train(down)</th>
+                <th>test(up)</th>
+                <th>test(down)</th>
+                <th>Test Accurancy</th>
+            </tr>
+        </tfoot>
+     </table>
+    </div>
+            
+</div>
+
+<!--
+      <th>行业名称</th>
+                <th>股票代码</th>
+                <th>股票名称</th>
+                <th>原始新闻(上升)</th>
+                <th>原始新闻(下降)</th>
+                <th>train[60%](上升)</th>
+                <th>train[60%](下降)</th>
+                <th>test[40%](上升)</th>
+                <th>test[40%](下降)</th>
+                <th>Test准确率</th>
+    -->
+
+<!--<script type="text/javascript" src="js/P1_viewShareAtt.js"></script> -->
+<!--<script type="text/javascript" src="js/getTable.js"></script>-->
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#P4_news_table').DataTable( {
+        "ajax": "data/P4_news.json"
+    } );
+} );
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <footer>
+                <p><a target="_blank" href="">&nbsp;</a>© 上海交通大学 苗富</p>
+            </footer>
+
+        </div> <!-- /container -->
+        
+        
+
+
+   
+        
+
+    
+
+</body></html>

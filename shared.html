@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://mark.ad.sogou.com/mark/login -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>谛听科技</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="./标注系统_files/bootstrap.min.css">
+        <link rel="stylesheet" href="./标注系统_files/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="./标注系统_files/main.css">
+         
+         <link rel="shortcut icon" href="diting.jpg">
+         <script src="lib/echarts.min.js"></script>
+         <script src="lib/jquery-3.1.0.min.js"></script>
+         <style rel="stylesheet">
+         .title
+         {
+          font-size:20px;
+          margin-top: 30px;
+          margin-bottom: 20px;
+          font-family: Georgia;
+
+
+         }
+          .subtitle, .notation
+         {font-family: Georgia;}
+         .notation{margin-bottom: 10px;}
+         </style>
+     
+
+    </head>
+    <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" tabindex="-1" href="index.html">Diting Tech</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a tabindex="-1" href="shared.html">Cross Attention</a></li>
+                            <li><a tabindex="-1" href="user.html">Following Smart Money</a></li>
+                            <li><a tabindex="-1" href="sentiment.html">Investor Sentiment</a></li>
+                            <li><a tabindex="-1" href="news.html">Trading On News</a></li>
+                            <li><a tabindex="-1" href="download_contact.html">download & contact us</a></li>
+
+
+                        </ul>
+                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            
+<div id="part1">
+    <div class="showdata" style="width: 1200px;height:550px;">
+        <div class="title">Stock Popularity & Cross Attention</div>
+        <div class="notation">During this part, we compute how many inverstors followers a give target stock(left), Also, we can further compute how many inverstors followers another stock given that they have follower a given target stock(right). From Behavior Finance, we know that if two stock are followed synergistically, these two stock must follow some pattern in their stock market. The default stock code is 000010. stock 000010 is a compnay of achitechive &decoration industry, in Chinese "建筑装饰". So the left figure is the stock popularity in achitechive &decoration industry. you can get a sense of how popular stock 000010 is in its industry. the right figure show that number of the intersection of the follower set of another stock and the stock 000010 follower set.  you can find that stock 300104( a media company) and 000010 has the largest numbe, 10344 users in common. So 300104, 000010 has some relationship in stock market from Behavior Finance theory. you can also type 000002,600010 etc. </div>
+
+        <div id="P1_shared_attention">
+        <input type="text" name="LastName" value="type stock code...">
+        <input onclick="responseSubmit();" type="submit" value="submit">
+        </div>
+        <div style="width: 600px;height:550px;float:left">
+        <div class="subtitle">Relative Popularity</div>
+        <div id="P1_shared_attention_1" style="width: 600px;height:500px;float:left"></div>
+        </div>
+        <div style="width: 600px;height:550px;float:left">
+        <div class="subtitle">Highest Common Attention</div>
+        <div id="P1_shared_attention_2" style="width: 600px;height:500px;float:left"></div>
+        </div>
+    </div>
+
+    <div class="netValue" style="width: 1200px;height:600px;">
+        <div class="title">Our Investment Strategy Porfermance in Chinese Stock Market</div>
+        <div class="notation">During this part, we make deep research about the pattern which exist in stock pairs which are followed synergistically. Based on the pattern we find, we make Our Investment Strategy, which is a kind of momentum stragety.(left) is the  CSI 500 Index. (right) is the Cumulative net value. Our portfolio consists of 500 stocks. hs300 is CSI300, here we use it as the market beachmark. the alpha is the excess return. And the AlphaSharp is 2.14.</div>
+        <div style= "width: 600px;height:540px;float:left">
+        <div class="subtitle">CSI 500</div>
+        <div >
+            <div id="market" style="width: 600px;height:200px;"></div>
+            <div id="market1" style="width: 600px;height:200px;"></div>
+            <div id="market2" style="width: 600px;height:80px;"></div>
+        </div>
+        </div>
+        <div style= "width: 600px;height:540px;float:left">
+        <div class="subtitle">Accumulative Return</div>
+        <div id="P1_plotNetValue" style="width: 600px;height:480px;float:left"></div>
+        </div>
+    </div>
+    <div class="risk" style="width: 1200px;height:600px;">
+         <div class="title">Strategy Risk Exposure </div>
+        <div class="notation">During this part, we compute our portfolio risk exposure in SIZE and Industry.It's well known that in stock market, SIZE is a good predictor. But Our portfolio is almost size-netural and industry netrual. What worth noting is that our strategy has low correlation with mainstream factor. This low corelation mainly is due to the innovative data source.</div>
+             <div class="subtitle">Size Risk Exposure</div>
+             <div id="P1_riskSize" style="width: 600px;height:500px;float:left"></div>
+             <div class="subtitle">Industry Risk Exposure</div>
+             <div id="P1_riskIndustry" style="width: 600px;height:500px;float:left"></div>
+    </div>
+
+
+    
+    
+</div>
+<div style="width: 1100px;height:10px;"></div>
+
+
+
+<script type="text/javascript" src="js/P1_riskSize.js"> </script>
+<script type="text/javascript" src ="js/P1_riskIndustry_pei.js"></script>
+<script type="text/javascript" src="js/market.js"></script>
+<script type="text/javascript" src="js/P1_plotNetValue.js"></script>
+<script type="text/javascript" src="js/P1_shared_attention.js"></script>
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <footer>
+                <p><a target="_blank" href="http://mark.ad.sogou.com/satisfy/">&nbsp;</a>© 上海交通大学 苗富</p>
+            </footer>
+
+        </div> <!-- /container -->
+        
+
+
+        
+
+    
+
+</body></html>
